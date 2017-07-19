@@ -1,7 +1,16 @@
 'use strict';
 
+console.log('hello');
 const express = require('express');
 const bodyParser = require('body-parser');
+
+var google = require('googleapis');
+var client_email=process.env.GOOGLE_CLIENT_EMAIL; // defined in Heroku
+
+console.log(client_email);
+
+
+
 
 
 const restService = express();
