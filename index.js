@@ -31,7 +31,7 @@ restService.post('/hook', function (req, res) {
  if(requestBody.result.resolvedQuery)
 {
 speech += requestBody.result.resolvedQuery;
-                    speech += ' ';
+                    speech += ' '+client_email;
 }
 
                 if (requestBody.result.action) {
