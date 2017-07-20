@@ -1,11 +1,12 @@
 'use strict';
 var google = require('googleapis');
 var AWSCLIENT = require('./clientaws');
+
 // fonctions test
 var id_calendrier=process.env.CALENDAR_ID;
 
-/// CREATION DU JWT CLIENT 
 
+/// CREATION DU JWT CLIENT 
 
 // get json secret google from s3
 var KEY_NAME="secret-code.json";
