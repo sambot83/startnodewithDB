@@ -1,9 +1,11 @@
 'use strict';
 const express = require('express');
 const bodyParser = require('body-parser');
-
+var Cal = require('./calendarbusiness');
 var google = require('googleapis');
 
+
+console.log(Cal.myDateTime());
 // Load the SDK for JavaScript
 var AWS = require('aws-sdk');
 
@@ -215,7 +217,7 @@ addevent();
  if(requestBody.result.resolvedQuery)
 {
 speech += requestBody.result.resolvedQuery;
-                    speech += ' ';
+                    speech += ' '+Cal.myDateTime()+' ';
 }
 
                 if (requestBody.result.action) {
