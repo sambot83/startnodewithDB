@@ -1,38 +1,22 @@
 'use strict';
 var google = require('googleapis');
 
+var AWSCLIENT = require('./clientaws');
 
-
-// Load the SDK for JavaScript
-var AWS = require('aws-sdk');
-// log to amazone s3
-console.log('hello s3');
- // Load the SDK for JavaScript
-//var AWS = require('aws-sdk');
- var AWS_ACCESS_KEY_ID=process.env.AWS_ACCESS_KEY_ID;
-
-  var  AWS_SECRET_ACCESS_KEY=process.env.AWS_SECRET_ACCESS_KEY;
-var BUCKET_NAME=process.env.BUCKET_NAME;
-
-
-
-let s3 = new AWS.S3({
-  accessKeyId: AWS_ACCESS_KEY_ID,
-  secretAccessKey: AWS_SECRET_ACCESS_KEY
-});
 
 // get json secret google from s3
 var KEY_NAME="secret-code.json";
+var BUCKET_NAME=process.env.BUCKET_NAME;
  var params = {Bucket: BUCKET_NAME, Key: KEY_NAME};
 var jwtClient;
 var id_calendrier=process.env.CALENDAR_ID;
 
-s3.getObject(params, function(err, json_data)
+AWSCLIENT.s3.getObject(params, function(err, json_data)
    {
       if (!err) {
         var jsonsecret = JSON.parse(new Buffer(json_data.Body).toString("utf8"));
         var client_email=jsonsecret.client_email;//process.env.GOOGLE_CLIENT_EMAIL; // defined in Heroku
-
+process.env.CLIENT_EMAIL=client_email;
 var private_key=jsonsecret.private_key;//process.env.GOOGLE_PRIVATE_KEY; // defined in Heroku
 console.log(client_email);
 
