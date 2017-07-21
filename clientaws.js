@@ -1,12 +1,16 @@
 'use strict';
 
 var AWS = require('aws-sdk');
+var VARPROV=require('./varprovider');
+
 // log to amazone s3
 console.log('creation s3');
  // Load the SDK for JavaScript
 //var AWS = require('aws-sdk');
- var AWS_ACCESS_KEY_ID=process.env.AWS_ACCESS_KEY_ID;
-var  AWS_SECRET_ACCESS_KEY=process.env.AWS_SECRET_ACCESS_KEY;
+// var AWS_ACCESS_KEY_ID=process.env.AWS_ACCESS_KEY_ID;
+var AWS_ACCESS_KEY_ID=VARPROV.AWS_ACCESS_KEY_ID;
+
+var  AWS_SECRET_ACCESS_KEY=VARPROV.AWS_SECRET_ACCESS_KEY;
 
 
 

@@ -1,13 +1,13 @@
 'use strict';
 var google = require('googleapis');
 var AWSCLIENT = require('./clientaws');
-
+var VARPROV=require('./varprovider');
 // fonctions test
 
 var events = require('events');
 var GetterJson=require('./GetterJson');
 
-var id_calendrier=process.env.CALENDAR_ID;
+var id_calendrier=VARPROV.CALENDAR_ID;
 var jsonsecret;
 var jwtClient;
 

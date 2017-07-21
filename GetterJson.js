@@ -2,7 +2,7 @@
 var events = require('events');
 
 var AWSCLIENT = require('./clientaws');
-
+var VARPROV=require('./varprovider');
 var eventEmitter = new events.EventEmitter();
 
 
@@ -10,7 +10,7 @@ var eventEmitter = new events.EventEmitter();
 
 // get json secret google from s3
 var KEY_NAME="secret-code.json";
-var BUCKET_NAME=process.env.BUCKET_NAME;
+var BUCKET_NAME=VARPROV.BUCKET_NAME;
  var params = {Bucket: BUCKET_NAME, Key: KEY_NAME};
 
 var theJson;
