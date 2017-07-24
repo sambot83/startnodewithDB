@@ -2,6 +2,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+var DATABASE=require('./databaseclient');
+
+DATABASE.TestDatabase();
 
 var AG=require('./Agent');
 
