@@ -8,16 +8,28 @@
 var Cal = require('./calendarbusiness');
 class Agent{
 
- constructor(name){
-    this.name = name ;
+ constructor(ID){
+    this.ID = ID ;
+    this.state=1;
+    this.datederniereutilisation = new Date();
    //this.Cal= require('./calendarbusiness');
  }
 
  print(){
     console.log('Name is :'+ this.name);
  }
+ DerniereUtilisation()
+ {
+     return this.datederniereutilisation;
+ }
+ GetID()
+ {
+     return this.ID;
+ }
  repondre(req, res)
 {
+    this.state+=1;
+    this.datederniereutilisation = new Date();
       try {
         var speech = 'empty speech';
 
@@ -26,13 +38,17 @@ class Agent{
 
             if (requestBody.result) {
                 speech = '';
-Cal.getevents();
-Cal.addevent();
-Cal.myDateTime();
+//Cal.getevents();
+//Cal.addevent();
+//Cal.myDateTime();
+if(requestBody.sessionId)
+{
+    speech +=' STATE '+this.state;
+}
  if(requestBody.result.resolvedQuery)
 {
-speech += requestBody.result.resolvedQuery;
-                    speech += ' indev ';
+//speech += requestBody.result.resolvedQuery;
+  //                  speech += ' indev ';
 }
 
                 if (requestBody.result.action) {
