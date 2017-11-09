@@ -9,5 +9,7 @@
   },
   "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
   "license": "Apache 2.0",
-  "dependencies": {}
+  "dependencies": {
+    "aws-sdk": "2.148.0"
+  }
 }
