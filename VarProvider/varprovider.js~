@@ -1,0 +1,14 @@
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+
+//exports.AWS_ACCESS_KEY_ID='AKIAJL364J33ZOOLISQQ';
+ //exports.AWS_SECRET_ACCESS_KEY='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';
+//exports.BUCKET_NAME='linkydoc';
+exports.AWS_ACCESS_KEY_ID='AKIAIAOBERYY5VN6IVKA';
+ exports.AWS_SECRET_ACCESS_KEY='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';
+ exports.BUCKET_NAME='linkydoc1.0';
