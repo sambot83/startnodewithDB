@@ -1,15 +1,20 @@
 {
-  "name": "apiai-webhook-sample",
-  "version": "1.0.0",
-  "description": "Webhook sample",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Danil Skachkov <danil.skachkov@speaktoit.com> (https://api.ai)",
-  "license": "Apache 2.0",
-  "dependencies": {
-    "aws-sdk": "2.148.0"
-  }
+    "name": "TrustBot",
+    "version": "1.0.0",
+    "keywords": [
+        "util",
+        "functional",
+        "server",
+        "client",
+        "browser"
+    ],
+    "author": "rops",
+    "contributors": [],
+    "dependencies": {
+        "aws-sdk": "^2.148.0",
+        "pg": "6.x"
+    },
+    "scripts": {
+        "start": "node index.js"
+    }
 }
